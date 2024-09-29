@@ -1,4 +1,17 @@
-
+/
+struct Node
+{
+    int data;
+    struct Node* left;
+    struct Node* right;
+    
+    Node(int x){
+        data = x;
+        left = right = NULL;
+    }
+};
+ */
+ 
  void lview(Node *root,int level,vector<int>&ans)
  {
      if(!root)
@@ -19,3 +32,9 @@ vector<int> leftView(Node *root)
     vector<int>ans;
    // Your code here
    if(!root)
+   {
+       return ans;
+   }
+  lview(root,0,ans);
+  return ans;
+}
